@@ -1,4 +1,4 @@
-<h1 align="center">Hi, I’m Priyanshu Rawat 👋</h1>
+<h1 align="left">Hi, I’m Priyanshu Rawat 👋</h1>
 
 <h4 align="left">
   🎓 B.Tech CSE • 🤖 AI & Machine Learning • 🧩 Problem Solver • 🚀 Project Builder
@@ -37,26 +37,6 @@
 
 ---
 
-## :octocat: Contributions
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/scobydobydoo/scobydobydoo/output/github-contribution-grid-snake.svg" />
-</p>
-
-<table align="center">
-  <tr>
-    <td align="center">
-      <img height="170"
-           src="https://github-readme-stats.vercel.app/api?username=scobydobydoo&show_icons=true&theme=vision-friendly-dark"/>
-    </td>
-    <td align="center">
-      <img height="170"
-           src="https://github-readme-stats-git-master-simplysabir.vercel.app/api/top-langs/?username=scobydobydoo&layout=compact&theme=vision-friendly-dark&langs_count=6"/>
-    </td>
-  </tr>
-</table>
-
----
 
 ## 💻 Tech Stack
 
@@ -78,4 +58,3 @@
 
 <br/>
 
-<img src="https://img.shields.io/ba
