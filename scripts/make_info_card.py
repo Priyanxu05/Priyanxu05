@@ -1,132 +1,151 @@
+from PIL import Image, ImageDraw, ImageFont
 from pathlib import Path
-from xml.sax.saxutils import escape
 
 
-OUTPUT = Path("info-card.svg")
+OUTPUT = Path("info-card.png")
 
-WIDTH = 490
-HEIGHT = 330
+WIDTH = 430
+HEIGHT = 300
+
+# Background
+BG = (13, 17, 23)
+
+# Text colors
+WHITE = (201, 209, 217)
+BLUE = (88, 166, 255)
+GRAY = (139, 148, 158)
+
+# Create image
+image = Image.new(
+    "RGB",
+    (WIDTH, HEIGHT),
+    BG
+)
+
+draw = ImageDraw.Draw(image)
 
 
+# Try to use a monospace font
+font_paths = [
+    "C:/Windows/Fonts/consola.ttf",
+    "C:/Windows/Fonts/CascadiaMono.ttf",
+]
+
+font = None
+
+for path in font_paths:
+
+    if Path(path).exists():
+
+        font = ImageFont.truetype(
+            path,
+            13
+        )
+
+        break
+
+
+if font is None:
+
+    font = ImageFont.load_default()
+
+
+# Border
+draw.rounded_rectangle(
+    (1, 1, WIDTH - 2, HEIGHT - 2),
+    radius=10,
+    outline=(48, 54, 61),
+    width=2
+)
+
+
+# Terminal dots
+draw.ellipse(
+    (15, 15, 25, 25),
+    fill=(255, 95, 86)
+)
+
+draw.ellipse(
+    (33, 15, 43, 25),
+    fill=(255, 189, 46)
+)
+
+draw.ellipse(
+    (51, 15, 61, 25),
+    fill=(39, 201, 63)
+)
+
+
+# Terminal title
+draw.text(
+    (75, 12),
+    "priyanxu05@github ~",
+    font=font,
+    fill=GRAY
+)
+
+
+# Command
+draw.text(
+    (20, 48),
+    "$ whoami",
+    font=font,
+    fill=BLUE
+)
+
+
+# Information
 lines = [
     ("Name", "Priyanshu Rawat"),
     ("Education", "B.Tech CSE"),
     ("Focus", "AI & Machine Learning"),
-    ("Languages", "Java • Python • C"),
-    ("Web", "HTML • CSS • JavaScript"),
-    ("Database", "MySQL • MongoDB"),
-    ("Libraries", "NumPy • Pandas"),
+    ("Languages", "Java, Python, C"),
+    ("Web", "HTML, CSS, JavaScript"),
+    ("Database", "MySQL, MongoDB"),
+    ("Libraries", "NumPy, Pandas"),
     ("Strength", "DSA & Problem Solving"),
 ]
 
 
-def main():
+y = 82
 
-    svg = []
+for key, value in lines:
 
-    # SVG opening
-    svg.append(
-        f'''<svg xmlns="http://www.w3.org/2000/svg"
-width="{WIDTH}"
-height="{HEIGHT}"
-viewBox="0 0 {WIDTH} {HEIGHT}">'''
+    draw.text(
+        (20, y),
+        key,
+        font=font,
+        fill=BLUE
     )
 
-    # Background
-    svg.append(
-        '''<rect
-x="1"
-y="1"
-width="488"
-height="328"
-rx="10"
-fill="#0d1117"
-stroke="#30363d"/>'''
+    draw.text(
+        (125, y),
+        ": " + value,
+        font=font,
+        fill=WHITE
     )
 
-    # Terminal dots
-    svg.append(
-        '''<circle cx="20" cy="20" r="5" fill="#ff5f56"/>
-<circle cx="38" cy="20" r="5" fill="#ffbd2e"/>
-<circle cx="56" cy="20" r="5" fill="#27c93f"/>'''
-    )
-
-    # Terminal title
-    svg.append(
-        '''<text
-x="75"
-y="25"
-fill="#8b949e"
-font-family="monospace"
-font-size="13">priyanxu05@github ~</text>'''
-    )
-
-    # Command
-    svg.append(
-        '''<text
-x="20"
-y="58"
-fill="#58a6ff"
-font-family="monospace"
-font-size="14">$ whoami</text>'''
-    )
-
-    # Information
-    start_y = 92
-
-    for i, (key, value) in enumerate(lines):
-
-        y = start_y + i * 30
-        delay = i * 0.12
-
-        key = escape(key)
-        value = escape(value)
-
-        svg.append(
-            f'''<g opacity="0">
-<text
-x="20"
-y="{y}"
-font-family="monospace"
-font-size="13">
-<tspan fill="#58a6ff">{key}</tspan>
-<tspan fill="#c9d1d9"> : {value}</tspan>
-</text>
-
-<animate
-attributeName="opacity"
-from="0"
-to="1"
-dur="0.5s"
-begin="{delay:.2f}s"
-fill="freeze"/>
-</g>'''
-        )
-
-    # Bottom cursor
-    svg.append(
-        '''<text
-x="20"
-y="322"
-fill="#58a6ff"
-font-family="monospace"
-font-size="12">▌</text>'''
-    )
-
-    svg.append("</svg>")
-
-    OUTPUT.write_text(
-        "\n".join(svg),
-        encoding="utf-8"
-    )
-
-    print()
-    print("==============================")
-    print("Info card created!")
-    print("==============================")
-    print()
-    print(f"File: {OUTPUT}")
+    y += 25
 
 
-if __name__ == "__main__":
-    main()
+# Cursor
+draw.text(
+    (20, 275),
+    "$",
+    font=font,
+    fill=BLUE
+)
+
+
+# Save
+image.save(
+    OUTPUT,
+    "PNG"
+)
+
+print()
+print("==============================")
+print("Info card PNG created!")
+print("==============================")
+print()
+print(f"File: {OUTPUT}")
