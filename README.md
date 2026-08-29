@@ -1,12 +1,12 @@
 <div align="center">
 
-<h3><code>priyanxu05@github ~ $ ./contributions.sh</code></h3>
+<h3><code> CONTRIBUTIONS </code></h3>
 
 <img src="./contrib-heatmap.svg" width="860" />
 
 <br><br>
 
-<h3><code>priyanxu05@github ~ $ whoami</code></h3>
+<h3><code>WHO AM I ?</code></h3>
 
 <table>
 <tr>
@@ -17,7 +17,7 @@
 
 <br>
 
-<h3><code>priyanxu05@github ~ $ connect</code></h3>
+<h3><code> CONNECT </code></h3>
 
 <p align="center">
 
@@ -37,7 +37,7 @@
 
 <br>
 
-<h3><code>priyanxu05@github ~ $ skills</code></h3>
+<h3><code> SKILLS </code></h3>
 
 <p>
 
@@ -62,6 +62,6 @@
 
 <br>
 
-<code>priyanxu05@github ~ $ echo "Building. Learning. Solving."</code>
+<code> "Building. Learning. Solving." </code>
 
 </div>
