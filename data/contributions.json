@@ -1,5 +1,5 @@
 {
-  "total_level": 62,
+  "total_level": 63,
   "best_day": {
     "date": "2026-08-18",
     "level": 4
@@ -423,6 +423,10 @@
     },
     {
       "date": "2026-08-24",
+      "level": 1
+    },
+    {
+      "date": "2026-08-31",
       "level": 1
     },
     {
