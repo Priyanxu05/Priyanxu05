@@ -6269,11 +6269,28 @@ y="30"
 width="12"
 height="12"
 rx="3"
-fill="#006d32"
+fill="#26a641"
 style="animation-delay:2.928s">
 
 <title>
-2026-09-01: level 2
+2026-09-01: level 3
+</title>
+
+</rect>
+
+
+<rect
+class="cell"
+x="780"
+y="45"
+width="12"
+height="12"
+rx="3"
+fill="#0e4429"
+style="animation-delay:2.936s">
+
+<title>
+2026-09-02: level 1
 </title>
 
 </rect>
