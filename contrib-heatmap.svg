@@ -5810,11 +5810,11 @@ y="45"
 width="12"
 height="12"
 rx="3"
-fill="#26a641"
+fill="#006d32"
 style="animation-delay:2.712s">
 
 <title>
-2026-08-19: level 3
+2026-08-19: level 2
 </title>
 
 </rect>
@@ -5827,11 +5827,11 @@ y="60"
 width="12"
 height="12"
 rx="3"
-fill="#26a641"
+fill="#006d32"
 style="animation-delay:2.720s">
 
 <title>
-2026-08-20: level 3
+2026-08-20: level 2
 </title>
 
 </rect>
@@ -6274,6 +6274,23 @@ style="animation-delay:2.928s">
 
 <title>
 2026-09-15: level 4
+</title>
+
+</rect>
+
+
+<rect
+class="cell"
+x="780"
+y="45"
+width="12"
+height="12"
+rx="3"
+fill="#006d32"
+style="animation-delay:2.936s">
+
+<title>
+2026-09-16: level 2
 </title>
 
 </rect>
